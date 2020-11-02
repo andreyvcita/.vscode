@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [{
+      "label": "Run Debugpy",
+      "command": "python2",
+      "args": [
+        "/Users/andriisem/dev/google-cloud-sdk/platform/google_appengine/dev_appserver.py", // YOUR PATH
+        "--python_startup_script=${workspaceRoot}/.vscode/pydev_startup.py",
+        "--port=8000",
+        "--host=gapp-local.wisestamp.com",
+        "--automatic_restart=yes",
+        "--max_module_instances=default:1",
+        "${workspaceRoot}/app.yaml",
+      ],
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Run",
+      "command": "python2",
+      "args": [
+        "/Users/andriisem/dev/google-cloud-sdk/platform/google_appengine/dev_appserver.py", // YOUR PATH
+        "--port=8000",
+        "--host=gapp-local.wisestamp.com",
+        "--automatic_restart=yes",
+        "--max_module_instances=default:1",
+        "--enable_console=true",
+        "--enable_host_checking=False",
+        "${workspaceRoot}/app.yaml",
+      ],
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "npm: dev",
+      "command": "npm",
+      "options": {
+        "cwd": "${workspaceFolder}/web/client/wscorp"
+      },
+      "args": ["run", "dev"],
+      "problemMatcher": ["$eslint-stylish"],
+      "group": "build"
+    },
+
+  ]
+}
